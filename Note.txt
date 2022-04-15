@@ -1,0 +1,170 @@
+http://files.cod3r.com.br/curso-python/apostila-python.pdf
+
+*KEYSHORTS MAIS USADOS VSCODE
+	Ctrl + S = Salva o arquivo
+	Ctrl + Z = Desfaz uma ação 
+	Ctrl + Shift = Novo Arquivo
+	Ctrl + Alt + N = Executa o código no output do VS
+	Ctrl + K O = Abre uma pasta
+	Ctrl + ' = Abre o terminal 
+	Ctrl + , = Abre as config 
+	Ctrl + ; = Comenta uma linha inteira
+
+*MODULOS OU BIBLIOTECAS DO PYTHON
+	random = aleatório (from random import radint)
+	math = matemática (from math import pi)
+	
+	
+*SHEBANG NO WINDOWS
+	Para usar o Shebang no windows devemos colocar( #! python )no inicio do código. Para saber mais acesse o link => https://docs.python.org/3/using/windows.html
+
+*EXECUTAR CODIGO PYTHON NO TERMINAL
+	1ª Opção=> ./nomeDoArquivo.py
+	2ª Opção=> python nomeDoArquivo.py
+
+*IMPORTANDO MÓDULO MATH
+	O "math" serve para usar varias funcionalidades da matemática dentro do python. Como exemplo temos a seguinte linha de código:
+												1.import math
+												2.print(math.pi)
+												3.math.pi = 3.1415......
+	Nesta linha pode-se ver a importação do "math" e logo em seguida o uso do Pi(π) que é uma das funcionalidades da matemática, assim como logaritima, função etc...
+
+*O QUE É API??
+	As APIs são um conjunto de padrões que fazem parte de uma interface e que permitem a criação de plataformas de maneira mais simples e prática para desenvolvedores.
+	A partir de APIs é possível criar softwares, aplicativos, programas e plataformas diversas.
+
+*COLETANDO DADOS DO USUÁRIO
+	Pare coletar os dados do usuario através do terminal devemos usar o "input()", pois assim conseguiremos dar um valor à uma variável por conta própria. Pórem se o valor que o
+	usuário for colocar for um numeral deve-se especificar através do "input()" seguido da classe "int()" </ x = int(input('abcdfeg.......')) />, ou também no print colocar a classe "float()" antes da variavél
+	como no exemplo a seguir </ print("Resultado:", a + float(x)) />.
+
+*MÓDULOS EM PYTHON
+	A utilização de módulos em python ajuda a ter um código mais organizado por assim dizer. O módulo principal tem nome de "__main__", mas conforme forem adicionados novo módulos cada um terá seu próprio nome.
+	Seu código ficará mais organizado pois os módulos criam divisões ou "paredes" entre as coisas fazendo com que nao fiquem misturados e sim separados em seus próprios ambientes.
+         1.1) Para saber se módulo principal é o "__main__" podemos usar uma condição através do "if" como no exemplo a seguir:
+		if __name__ == '__main__':
+		    print('Este é o módulo principal!')	
+	      Se a condição do "if" for cumprida, aa linhas de códigos que vierem após ele seram executadas sem nenhum problema.
+
+*FUNÇÕES
+	Função é um bloco de algoritmo que contém varias sequencias de passo à passo.O "def" é a palavra usada para definir uma função => def nomeDaFunção(parâmetros):
+                                                          										      ResoluçãoDafunção
+        As funções podem receber entradas de parâmetros e gerar um saída ou somente receber e não gerar uma saída. Para poder gerar uma saída podemos usar o "return" e que como o próprio nome ja diz. 
+	ele vai retornar algo. Exemplo feito no arquivo area_circle_v9.py: def circle(radius):
+					    				       return pi * float(radius) ** 2
+	Assertions = faz testes para saber se uma condição é True ou False e passa para a proximo linha como se fosse o "if" e o "for". Se a condição for True/Verdadeira passa direto e nao retorna nada, 
+	mas se for False a condição ira retornar um erro de Assertion (AssertionError).
+
+	.join()= o join serve para que quando seja gerado novos valores para uma lista, tupla etc aconteca uma concatenação desse valores, ou seja, os novos valores serao inseridos nessas listas...(EX.: gerados_html_v3.py)
+	
+	Callable = callable é uma propiedade que nos permite chamar uma função dentro de outra função.(EX.: prog_funcional_spoiler.py)
+
+*OBTENDO ARGUMENTOS VIA TERMINAL
+	Diferente de como quando coletamos os dados do usário através do input anteriormente, agora iremos coletar os dados pelo terminal. Para fazer isso deve-se importar uma biblioteca chamada "sys" </ import sys />,
+	assim quando digitar o nome do arquivo no terminal logo na frente do mesmo coloque o dado que desejar usar como no exemplo a seguir </ python area_circle_v10.py 12.132 />. Neste exemplo o "12.132" é o raio do circulo,
+	ou seja, o dado que queremos usar.
+
+*ESTRUTURAS DE CONTROLE
+	1."If" e o "else":
+		
+		O "if" e o "else" é usado para dar uma sentença ao código. Exemplo: se (if) algo da sentença for cumprida o "if" retorna True e executa o que vier logo em seguida, mas caso contrario ele recebe False e chama o "else"
+		executando assim o que tiver dentro do mesmo. Desmonstrção => if len(armazenamento) > 250GB:
+								                  print("Voce nao tem espaço na memoria")
+								      	      else:
+								                  print("Voce possui espaço livre na memoria")
+	
+	2."While":
+
+		O "while" traduzindo para o português "enquanto", é um laço de repetição que assim como o "if" e o "else" serve como um modo de sentença. Ele irá ficar repetindo o mesmo laço ou bloco do código 
+		enquanto for verdadeiro (True) e somente sairá do laço quando receber falso (False) para então continuar a executar o restante do código. Apesar do "while" ser um laço infinito que enquanto receber True irá ficar 
+		rodando a mesmo coisa sem parar, podemos utilizar alguns metódos para dar um stop nesse laço e como principal exemplo disso temos o "break".
+
+	3."For":
+
+		O "for" é um laço de repetição também assim como o "while", porém o ele é mais utilizado e so é usado quando se tem um número determinado de repetições que ao contrário do "while" faz repetições infinitas até que receba
+		False ou então seja usado o break no laço para que a repetição seja finita.	
+
+	4."Break" e o "continue":
+
+		O "break" e o "continue" são usados para por um fim a uma repetição de laço, mas eles fazem isso de formas diferentes. O "continue" irá parar a repetição mas não vai sair do laço, e continuará o código para a proxima
+		repetição. Enquanto isso o "break" vai parar a repetição e diferentemente do "continue" ele irá sair do laço seguindo assim para os proximos blocos do códigos. Segue os exemplos =>
+			EX: 1)for x in range(1, 11):				2)for x in range(1, 11):    *No exemplo 1 o continue vai sair do rapetição do "if" mas no do laço "for" e segue para a proxima repetição.
+			          if x % 2 == 0:				            if x == 5:
+				        continue 					                break
+				      if x % 10 == 1:				  
+				        continue.....				        print("Fim do código")
+
+
+
+
+*"NOMECLATURAS"
+	.append = serve para associar, atribuir, adicionar... algum valor ou atributo á uma lista.
+	.sum = usado para fazer somas de variaveis em uma lista, tupla, dicionario etc...
+    .sorted = organizar uma lista em ordem crescente ou alfabetica.
+    .join = junta variaveis de uma lista ou tupla e podemos separar elas usando ('caractere que vai usar').join(a lista que quer usar) .
+    .sqrt = raiz quadrada de um numero e precisa do import math
+	.pop = apaga o ultimo valor recebido e atribui um novo definido na hora do codigo, EX.: desafio_html.py .
+
+
+
+
+*RECURSIVIDADE
+	Recursividade é quando uma função, ela propria se chama como mostrado no arquivo do curso => exemplo_rescursivo.py
+
+
+*GENERATORS
+	O generator serve para gerar novo dados sobre demanda, ao invés do list no comprehension. Além disso o generator consome menos memória nesse caso também.
+
+	Para usa-lo podemos chamar ele escrevendo print(next(generator)), usando generator como uma variavél.
+
+*PACKING E UNPACKING
+	Packing = Nos fazemos com que seja colocados valores dentro de uma unica tupla (Ex.: Soma de numeros -> pega mias de um valor e transforma em outro valor unico.).
+	Unpacking = Ao contrario do packing nos podemos pegar uma tupla, lista ou dicionario e desempacotar seus valores e usa-los posteriormente.
+	*args = argumentos posicionais, nao precisam estar indexados à algo.
+	**kwargs = argumentos nomeados, precisam estar indexados à algo. (ex.: MONEY=12.50)
+
+*CLASSE VS OBJETO
+	Classe = uma estrutura de dados personalizados. 
+	Bloco try: usado quando uma linha de codigo pode vir a gerar um problema neste caso usa-se um except e trata o erro atraves de outra classe como no caso do To_do_v8.py onde se usa a 
+	classe TaskNotFound(Exception): .
+
+*MEMBROS DE INSTANCIA VS ESTATICOS
+	Quando se cria um objeto, cria-se ao mesmo tempo duas intancias e cada instancia ira receber três atributos. Pra cada nova instancia cada atributo vai receber nosvos valores.
+    Quando se cria o objeto voce pode acessar os atributos atras dele mesmo que no caso é a propria instancia.
+    Tendo um membro estatico dentro de uma classe voce pode acessa-lo chamando a classe e nao o objeto. EX.: d1 = Data(2, 6) => membro de instancia
+																					                                 d1.dia .... ou d1.mes => membro de instancia acessado atraves do obj ou instancia.
+                                                                                                                     Data.ano = 2020 => membro estatico acessado atraves da classe.
+	Em " Programming Python ", Mark Lutz menciona "mixins". ... Um mixin é um tipo especial de herança múltipla. 
+	Existem duas situações principais em que os mixins são usados: Você deseja fornecer muitos recursos opcionais para uma classe.
+
+*SQL NOTES
+	DML(Data Manipulation Language) = Insert, Select, Update, Delete (Inserir, Selecionar, Atualizar, Deletar);
+	DDL(Data Definition Language) = Create, Alter, Drop (Criar, Alternar, "Derrubar");
+	DCL(Data Control Language) = Grant, Deny, Revoke (Garantir, Impedir, Revogar);
+	TCL(Trasaction Data Language) = Begin Trasaction, Commit Trasaction, Rollback (Transação Inicial, Comentario de Transação, Reverter); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

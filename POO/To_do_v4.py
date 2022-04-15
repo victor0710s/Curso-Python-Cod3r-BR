@@ -1,0 +1,76 @@
+from datetime import datetime, timedelta
+
+
+class Project:
+    def __init__(self, name):
+        self.name = name
+        self.tasks = []
+
+    def __iter__(self):
+        return self.tasks.__iter__()
+
+    def add(self, description, due_date=None):
+        self.tasks.append(Task(description, due_date))
+
+    def outstanding(self):
+        return [task for task in self.tasks if not task.done]
+
+    def search(self, description):
+        # IndexError ??
+        return [task for task in self.tasks
+                if task.description == description][0]
+
+    def __str__(self):
+        return f'{self.name} ({len(self.outstanding())}) task(s) outstanding!'
+
+
+class Task:
+    def __init__(self, description, due_date=None):
+        self.description = description
+        self.done = False
+        self.creation = datetime.now()
+        self.due_date = due_date
+
+    def complete(self):
+        self.done = True
+
+    def __str__(self):
+        status = []
+        if self.done:
+            status.append('(Done)')
+        elif self.due_date:
+            if datetime.now() >= self.due_date:
+                status.append('(Overdue)')
+            else:
+                Days = (self.due_date - datetime.now()).days
+                status.append(f'-> Expire in {Days} days!')
+        return f'{self.description} ' + ' '.join(status)
+
+
+def main():
+    Home = Project('HomeWork')
+    Home.add('Iron clothes', datetime.now())
+    Home.add('Wash the dishes')
+    print(Home)
+
+    Home.search('Wash the dishes').complete()
+    for task in Home:
+        print(f'- {task}')
+    print(Home)
+
+    Market = Project('Shopping in the Market')
+    Market.add('Fruits', datetime.now() + timedelta(days=3))
+    Market.add('Meat')
+    Market.add('Rice')
+    Market.add('Shampoo')
+    print(Market)
+
+    buy_meat = Market.search('Meat')
+    buy_meat.complete()
+    for task in Market:
+        print(f'- {task}')
+    print(Market)
+
+
+if __name__ == '__main__':
+    main()
